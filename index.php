@@ -21,7 +21,7 @@ mysqli_free_result($pages_data);
 
 $sub_pages = GetPages($ConnDB, $PageID);
 if(($PageID != "0") && ($sub_pages) && ($sub_pages->num_rows > 0)) {
-    echo "Sub Pages links: ";
+    echo "Sub Pages ";
     DisplayMenu($sub_pages);
     mysqli_free_result($sub_pages);
 } else {
