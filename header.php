@@ -24,7 +24,7 @@ include_once "menu.php";
         $result = GetPages($ConnDB, 0);
 
         DisplayMenu($result);
-        // mysqli_free_results($result);
+        mysqli_free_result($result);
 
     ?>
 
