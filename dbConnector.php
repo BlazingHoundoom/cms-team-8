@@ -13,13 +13,13 @@ function ConnGet() {
 }
 
 function GetPages($ConnDB, $ParentPage=0) {
-    $sql = 'SELECT id, Title, Header FROM WebDocs where IsActive = 1 and ParentPage = ' . $ParentPage . ' order by ParentPage asc, PageOrder Asc;';
+    $sql = 'SELECT id, Title, Header, PageText FROM WebDocs where IsActive = 1 and ParentPage = ' . $ParentPage . ' order by ParentPage asc, PageOrder Asc;';
 
     return @mysqli_query($ConnDB, $sql);
 }
 
 function GetAllPages($ConnDB) {
-    $sql = 'SELECT id, Title, Header, ParentPage, PageOrder, IsActive FROM WebDocs order by ParentPage asc, PageOrder Asc;';
+    $sql = 'SELECT id, Title, Header, PageText, ParentPage, PageOrder, IsActive FROM WebDocs order by ParentPage asc, PageOrder Asc;';
 
     return @mysqli_query($ConnDB, $sql);
 }
@@ -27,11 +27,11 @@ function GetAllPages($ConnDB) {
 function GetContentPage($ConnDB, $Id) {
     $result = null;
 
-    $sql = "SELECT id, Title, Header FROM WebDocs where IsActive = 1 and id = " . $Id;
+    $sql = "SELECT id, Title, Header, PageText FROM WebDocs where IsActive = 1 and id = " . $Id;
     $result = @mysqli_query($ConnDB, $sql);
 
     if ((!$result) || ($result->num_rows < 1)){
-        $sql = "SELECT id, Title, Header FROM WebDocs where IsActive = 1 order by PageOrder asc limit 1;";
+        $sql = "SELECT id, Title, Header, PageText FROM WebDocs where IsActive = 1 order by PageOrder asc limit 1;";
 
         $result = @mysqli_query($ConnDB, $sql);
     }

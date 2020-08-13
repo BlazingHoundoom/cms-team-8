@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS WebDocs (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(25) NOT NULL,
     Header VARCHAR(25) NOT NULL,
+    PageText VARCHAR(100) NOT NULL,
     ParentPage INT DEFAULT 0,
     PageOrder INT DEFAULT 2,
     IsActive INT
@@ -44,23 +45,23 @@ ON DUPLICATE KEY UPDATE
 FName = 'Manuel', LName = 'Zavala', UName = 'manny', Email = 'manny23@gmail.com', Pswd = 'abc2', IsAdmin = 0, IsActive = 1;
 
 -- PAGES
-INSERT INTO WebDocs (id, Title, Header, PageOrder, IsActive)
-VALUES (1, 'Home', 'Header 1', 0, 1)
+INSERT INTO WebDocs (id, Title, Header, PageText, PageOrder, IsActive)
+VALUES (1, 'Home', 'Home', "Welcome!!!", 0, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Home', Header = 'Header 1', PageOrder = 0, IsActive = 1;
+Title = 'Home', Header = 'Home', PageText = "Welcome!!!", PageOrder = 0, IsActive = 1;
 
-INSERT INTO WebDocs (id, Title, Header, PageOrder, IsActive)
-VALUES (2, 'About Us', 'Header 2', 2, 1)
+INSERT INTO WebDocs (id, Title, Header, PageText, PageOrder, IsActive)
+VALUES (2, 'About Us', 'About Us', "Something that we will changue later", 2, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'About Us', Header = 'Header 2', PageOrder = 2, IsActive = 1;
+Title = 'About Us', Header = 'About Us', PageText = "Something that we will changue later", PageOrder = 2, IsActive = 1;
 
 -- SUB PAGES
-INSERT INTO WebDocs (id, Title, Header, ParentPage, PageOrder, IsActive)
-VALUES (3, 'Home 1', 'Sub Home 1', 1, 3, 1)
+INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
+VALUES (3, 'Home 1', 'Sub Home 1', "Welcome to the first Sub Page", 1, 3, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Home 1', Header = 'Sub Home 1', ParentPage = 1, PageOrder = 3, IsActive = 1;
+Title = 'Home 1', Header = 'Sub Home 1', PageText = "Welcome to the first Sub Page", ParentPage = 1, PageOrder = 3, IsActive = 1;
 
-INSERT INTO WebDocs (id, Title, Header, ParentPage, PageOrder, IsActive)
-VALUES (4, 'Home 2', 'Sub Home 2', 1, 4, 1)
+INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
+VALUES (4, 'Home 2', 'Sub Home 2', "Welcome to the second Sub Page", 1, 4, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Home 2', Header = 'Sub Home 2', ParentPage = 1, PageOrder = 4, IsActive = 1;
+Title = 'Home 2', Header = 'Sub Home 2', PageText = "Welcome to the second Sub Page", ParentPage = 1, PageOrder = 4, IsActive = 1;
