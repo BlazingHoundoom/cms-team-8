@@ -8,8 +8,7 @@ include_once "header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css"  href="Style.css">
+    <link rel="stylesheet" type="text/css"  href="Style2.css">
 </head>
 <body>
     <h1 id="login">Login Page</h1>
@@ -103,6 +102,7 @@ include_once "header.php";
                     <br/>
                     <label for=\"psw\"><b>Password</b></label>
                     <input type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>
+                    <br/>
                     <br/>
                     <button type=\"submit\">Login</button>
                 </div>
