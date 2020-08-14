@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(242, 248, 248);
+}
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(194, 187, 187);
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+}
+  
+.navBar :hover {
+    background-color: rgb(71, 68, 68);
+}
+
+.content, #login {
+    text-align: center;
+    font-size: 30px;
+}
+
+.form {
+    text-align: center;
+}

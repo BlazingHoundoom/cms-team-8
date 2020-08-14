@@ -3,30 +3,45 @@
 include_once "header.php";
 ?>
 
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"  href="Style.css">
+</head>
+<body>
 
-$PageID = "0";
+    <div class="content">
+        <?php
 
-if(array_key_exists("PageID", $_GET) == true) {
-    $PageID = $_GET["PageID"];
-}
-?>
+            $PageID = "0";
 
-<?php 
+            if(array_key_exists("PageID", $_GET) == true) {
+                $PageID = $_GET["PageID"];
+            }
+        ?>
 
-$pages_data = GetContentPage($ConnDB, $PageID);
-DisplayPages($pages_data);
-mysqli_free_result($pages_data);
+        <?php 
+
+            $pages_data = GetContentPage($ConnDB, $PageID);
+            DisplayPages($pages_data);
+            mysqli_free_result($pages_data);
 
 
-$sub_pages = GetPages($ConnDB, $PageID);
-if(($PageID != "0") && ($sub_pages) && ($sub_pages->num_rows > 0)) {
-    DisplayMenu($sub_pages);
-    mysqli_free_result($sub_pages);
-} 
+            $sub_pages = GetPages($ConnDB, $PageID);
+            if(($PageID != "0") && ($sub_pages) && ($sub_pages->num_rows > 0)) {
+                DisplayMenu($sub_pages);
+                mysqli_free_result($sub_pages);
+            } 
 
-mysqli_close($ConnDB);
-?>
+            mysqli_close($ConnDB);
+        ?>
+
+    </div>
+</body>
+</html>
 
 <?php 
 require 'create_page.php';

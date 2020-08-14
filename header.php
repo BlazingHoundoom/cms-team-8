@@ -14,22 +14,23 @@ include_once "menu.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css"  href="Style.css">
 </head>
 <body>
 
-    <?php
+    <div class="navBar">
+        <?php
 
-        $ConnDB = ConnGet();
+            $ConnDB = ConnGet();
 
-        // $result = GetAllPages($ConnDB);
-        $result = GetPages($ConnDB, 0);
+            // $result = GetAllPages($ConnDB);
+            $result = GetPages($ConnDB, 0);
 
-        DisplayMenu($result);
-        mysqli_free_result($result);
+            DisplayMenu($result);
+            mysqli_free_result($result);
 
-    ?>
-
-    &nbsp; &nbsp;<a href="login.php">Login Page</a>
-
+        ?>
+        &nbsp; &nbsp;<a href="login.php">Login Page</a>
+    </div>
 </body>
 </html>
