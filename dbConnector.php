@@ -6,7 +6,7 @@ DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'Content');
 
 function ConnGet() {
-    $ConnDB = @mysqli_connect(DB_SERVER, DB_USER, DB_PSWD, DB_NAME, 3308)
+    $ConnDB = @mysqli_connect(DB_SERVER, DB_USER, DB_PSWD, DB_NAME, 3306)
 
     OR die('Failed to connect to MySQL ' . DB_SERVER . '::' . DB_NAME . ' : ' . mysqli_connect_error());
 
@@ -46,6 +46,24 @@ return $result;
 
 function RemovePage($ConnDB, $Id) {
     $sql = "update from WebDocs set IsActive = 0 where id = " . $Id;
+
+    return @mysqli_query($ConnDB, $sql);
+}
+
+function AddPage($ConnDB, $Title, $Header, $PageText, $ParentPage=0, $PageOrder=0){
+    $sql = "Insert into webdocs (Title, Header, PageText, ParentPage, PageOrder, IsActive) values ('".$Title."', '".$Header."', '".$PageText."', ".$ParentPage.", ".$PageOrder.", 1)";
+
+    return @mysqli_query($ConnDB, $sql);
+}
+
+function UpdatePage($ConnDB, $Id, $Title, $Header, $PageText, $ParentPage=0, $PageOrder=0){
+    $sql = "Update webdocs set Title='".$Title."', Header='".$Header."', PageText='".$PageText."', ParentPage=".$ParentPage.", PageOrder=".$PageOrder.", IsActive=1 where id=".$Id;
+
+    return @mysqli_query($ConnDB, $sql);
+}
+
+function DeletePage($ConnDB, $Id){
+    $sql = "delete from WebDocs where id = " . $Id;
 
     return @mysqli_query($ConnDB, $sql);
 }

@@ -27,3 +27,7 @@ if(($PageID != "0") && ($sub_pages) && ($sub_pages->num_rows > 0)) {
 
 mysqli_close($ConnDB);
 ?>
+
+<?php 
+require 'create_page.php';
+?>

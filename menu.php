@@ -27,6 +27,23 @@ function DisplayPages($data_from_pages) {
     } else {
         echo "The page don't have data to display <br />";
     }
+    if(isset($_SESSION["logged-in"])){
+        if($_SESSION["logged-in"]=="admin"){
+            $id = (isset($_GET["PageID"]))? $_GET["PageID"]: 1;
+            //echo $id;
+            echo '<form action="update_page.php" method="POST">
+            <input type="hidden" name="id" value="'.$id.'"/>
+            <input type="text" name="header" value="'. $row['Header'].'"/>
+            <input type="text" name="title" value="'. $row['Title'].'"/>
+            <textarea name="content">'.$row["PageText"].'</textarea>
+            <input type="submit" value="Edit Page" />
+            </form>';
+            echo '<form action="delete_page.php" method="POST">
+            <input type="hidden" name="id" value="'.$id.'"/>
+            <input type="submit" value="Delete Page" />
+            </form>';
+        }
+    }
 }
 
 ?>
