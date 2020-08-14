@@ -75,7 +75,7 @@ include_once "header.php";
         }
 
         if ($input_username === "" && $input_password === "") {
-            echo "<h3>Nothing</h3>";
+            // echo "<h3>Nothing</h3>";
         } else if (strcmp($val1, $input_username) === 0 && strcmp($val2, $input_password) === 0) {
             echo '<h3>Admin wesmon is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
@@ -91,7 +91,7 @@ include_once "header.php";
         } else {
             echo "<h3>Username and Password are Invalid</h3>";
         }
-        print_r($_SESSION['logged-in']);
+        // print_r($_SESSION['logged-in']);
 
         echo "
         <div class='form'>
