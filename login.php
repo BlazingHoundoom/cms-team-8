@@ -1,8 +1,6 @@
 <h1>Login Page</h1>
 
 <?php
-session_start();
-
 $admin_login_username = "admin";
 $admin_login_password = "12345";
 
