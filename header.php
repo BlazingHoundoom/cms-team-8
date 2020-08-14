@@ -1,5 +1,6 @@
 <?php
 session_start();
+print_r($_SESSION['logged-in']);
 
 include_once "dbConnector.php";
 include_once "menu.php";
