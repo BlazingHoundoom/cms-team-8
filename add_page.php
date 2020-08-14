@@ -2,7 +2,7 @@
 //include 'dbConnector.php';
 $new_table = $_POST["name"];
 include "dbConnector.php";
-//$new_table = "Page";
+$new_table = "About";
 $mysqli = ConnGet();
 //echo $mysqli->real_escape_string($_POST['name']) . '<br>';
 //include database connection
@@ -21,5 +21,7 @@ if( mysqli_query($mysqli, $query) ) {
     exit();
 }
 //close database connection
+
+$mysqli->free();
 $mysqli->close();
 ?>
