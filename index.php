@@ -32,4 +32,5 @@ mysqli_close($ConnDB);
 
 <?php 
 require "login.php";
+require 'create_page.php';
 ?>

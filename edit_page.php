@@ -1,15 +1,15 @@
 <?php
-  $table = $_POST["table"];
-  $tag = $_POST["tag"];
-  $contents = $_POST["contents"];
   $id = $_POST["id"];
-  include "dbConnector.php";
-  $mysqli = ConnGet();
-  $query = "update".$table." set tag_name = '".$tag."', contents = '".$contents."' where id = ".$id;
-
-  $mysqli->query($query);
-
-  $mysqli->free();
-  $mysqli->close();
-
+  $title = $_POST["title"];
+  $header = $_POST["header"];
+  $content = $_POST["content"];
+  // if(isset($_SESSION["logged-in"])){
+  //   print_r($_SESSION["logged-in"]);
+  echo '<form action="update_page.php" method="post">
+  <input type="hidden" name="id" value="'.$id.'">
+  <input type="text" name="title" value="'.$title.'">
+  <input type="text" name="header" value="'.$header.'">
+  <textarea name="content" id="" cols="30" rows="10">'.$content.'</textarea>
+  <input type="submit" name="submit" value="Update Page"/>
+</form>';
 ?>

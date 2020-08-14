@@ -27,6 +27,15 @@ function DisplayPages($data_from_pages) {
     } else {
         echo "The page don't have data to display <br />";
     }
+    $id = (isset($_GET["PageID"]))? $_GET["PageID"]: 1;
+    //echo $id;
+    echo '<form action="update_page.php" method="POST">
+            <input type="hidden" name="id" value="'.$id.'"/>
+            <input type="text" name="header" value="'. $row['Header'].'"/>
+            <input type="text" name="title" value="'. $row['Title'].'"/>
+            <textarea name="content">'.$row["PageText"].'</textarea>
+            <input type="submit" value="Edit Page" />
+        </form>';
 }
 
 ?>
