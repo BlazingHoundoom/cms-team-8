@@ -23,8 +23,10 @@ if ($input_username == "" && $input_password == "") {
 
 } else if ($input_username == $admin_login_username && $input_password == $admin_login_password) {
     echo "<h3>Admin is logged in</h3>";
+    $_SESSION["logged-in"] = "admin";
 } else if ($input_username == $user_login_username && $input_password == $user_login_password) {
     echo "<h3>User is logged in</h3>";
+    $_SESSION["logged-in"] = "user";
 } else {
     echo "<h3>Username and Password are Invalid</h3>";
 }
