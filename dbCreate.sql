@@ -17,10 +17,11 @@ CREATE TABLE IF NOT EXISTS WebDocs (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(25) NOT NULL,
     Header VARCHAR(25) NOT NULL,
-    PageText VARCHAR(100) NOT NULL,
+    PageText VARCHAR(1000) NOT NULL,
     ParentPage INT DEFAULT 0,
     PageOrder INT DEFAULT 2,
-    IsActive INT
+    IsActive INT,
+    picture BLOB
 );
 
 -- admistrators
@@ -46,22 +47,41 @@ FName = 'Manuel', LName = 'Zavala', UName = 'manny', Email = 'manny23@gmail.com'
 
 -- PAGES
 INSERT INTO WebDocs (id, Title, Header, PageText, PageOrder, IsActive)
-VALUES (1, 'Home', 'Home', "Welcome!!!", 0, 1)
+VALUES (1, 'Home', 'Home', "Welcome to WmMGMc pets store!!!", 0, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Home', Header = 'Home', PageText = "Welcome!!!", PageOrder = 0, IsActive = 1;
+Title = 'Home', Header = 'Home', PageText = "Welcome to WmMgMc pets store!!!", PageOrder = 0, IsActive = 1;
 
 INSERT INTO WebDocs (id, Title, Header, PageText, PageOrder, IsActive)
-VALUES (2, 'About Us', 'About Us', "Something that we will changue later", 2, 1)
+VALUES (2, 'About Us', 'About Us', "", 2, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'About Us', Header = 'About Us', PageText = "Something that we will changue later", PageOrder = 2, IsActive = 1;
+Title = 'About Us', Header = 'About Us', PageText = "", PageOrder = 2, IsActive = 1;
+
+INSERT INTO WebDocs (id, Title, Header, PageText, PageOrder, IsActive)
+VALUES (3, 'Contact', 'Contact', "Contact!!!!!", 3, 1)
+ON DUPLICATE KEY UPDATE
+Title = 'Contact', Header = 'Contact', PageText = "Contact!!!!!", PageOrder = 3, IsActive = 1;
 
 -- SUB PAGES
 INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
-VALUES (3, 'Home 1', 'Sub Home 1', "Welcome to the first Sub Page", 1, 3, 1)
+VALUES (4, 'History', 'History', "WmMgMc is a family business that start on 1990 when the grandmother start collection many pets that found on the streets and don't want that they be alone and have a bad health. ", 2, 3, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Home 1', Header = 'Sub Home 1', PageText = "Welcome to the first Sub Page", ParentPage = 1, PageOrder = 3, IsActive = 1;
+Title = 'History', Header = 'History', PageText = "WmMgMc is a family business that start on 1990 when the grandmother start collection many pets that found on the streets and don't want that they be alone and have a bad health. ", ParentPage = 2, PageOrder = 3, IsActive = 1;
 
 INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
-VALUES (4, 'Home 2', 'Sub Home 2', "Welcome to the second Sub Page", 1, 4, 1)
+VALUES (5, 'Mission', 'Mission', "Our mission is that every pet have a home where to live, a family to play with a family to play with, someone who takes care of them and above all who gives them the love they need.", 2, 4, 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Home 2', Header = 'Sub Home 2', PageText = "Welcome to the second Sub Page", ParentPage = 1, PageOrder = 4, IsActive = 1;
+Title = 'Mission', Header = 'Mission', PageText = "Our mission is that every pet have a home where to live, a family to play with a family to play with, someone who takes care of them and above all who gives them the love they need.", ParentPage = 2, PageOrder = 4, IsActive = 1;
+
+INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
+VALUES (6, 'Locations', 'Locations', "9941 North Newbridge Ave. Chicago Heights, IL 60411", 3, 3, 1)
+ON DUPLICATE KEY UPDATE
+Title = ' History', Header = 'History', PageText = "9941 North Newbridge Ave. Chicago Heights, IL 60411", ParentPage = 2, PageOrder = 3, IsActive = 1;
+
+INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
+VALUES (7, 'Email', 'Email', "marielahdz@gmail.com weslay34@gmail.com matthew99@gmail.com", 3, 4, 1)
+ON DUPLICATE KEY UPDATE
+Title = 'Email', Header = 'Email', PageText = "marielahdz@gmail.com weslay34@gmail.com matthew99@gmail.com", ParentPage = 2, PageOrder = 4, IsActive = 1;
+
+
+-- UPDATE WebDocs INNER JOIN Users  
+-- SET WebDocs.PageText = Users.Email where WebDocs.id = 7;

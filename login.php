@@ -1,7 +1,12 @@
+<?php
+
+include_once "header.php";
+?>
+
 <h1>Login Page</h1>
 
 <?php
-session_start();
+//session_start();
 
 $admin_login_username = "admin";
 $admin_login_password = "12345";

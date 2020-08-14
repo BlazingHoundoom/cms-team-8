@@ -28,6 +28,7 @@ include_once "menu.php";
 
     ?>
 
+    &nbsp; &nbsp;<a href="login.php">Login Page</a>
 
 </body>
 </html>
