@@ -20,8 +20,7 @@ CREATE TABLE IF NOT EXISTS WebDocs (
     PageText VARCHAR(1000) NOT NULL,
     ParentPage INT DEFAULT 0,
     PageOrder INT DEFAULT 2,
-    IsActive INT,
-    picture BLOB
+    IsActive INT
 );
 
 -- admistrators
