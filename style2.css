@@ -66,3 +66,12 @@ body {
     font-size: 20px;
     border: 1px solid rgb(78, 211, 166);
 }
+
+
+.create {
+    width: 10%;
+    min-width: 200px;
+    margin: auto;
+    background-color: rgba(10, 100, 73, 0.397);
+    padding: 10px 50px 10px 10px;
+}
