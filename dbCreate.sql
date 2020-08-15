@@ -80,7 +80,3 @@ INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActiv
 VALUES (7, 'Email', 'Email', "marielahdz@gmail.com weslay34@gmail.com matthew99@gmail.com", 3, 4, 1)
 ON DUPLICATE KEY UPDATE
 Title = 'Email', Header = 'Email', PageText = "marielahdz@gmail.com weslay34@gmail.com matthew99@gmail.com", ParentPage = 2, PageOrder = 4, IsActive = 1;
-
-
--- UPDATE WebDocs INNER JOIN Users  
--- SET WebDocs.PageText = Users.Email where WebDocs.id = 7;

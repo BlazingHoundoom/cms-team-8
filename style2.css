@@ -26,7 +26,7 @@ body {
 .content {
     text-align: left;
     font-size: 25px;
-    margin:10px 600px;
+    text-align: center;
 }
 
 #login {

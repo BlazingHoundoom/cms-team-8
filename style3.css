@@ -83,3 +83,11 @@ a {
     font-size: 20px;
     border: 1px solid rgb(128, 0, 0);
 }
+
+.create {
+    width: 10%;
+    min-width: 200px;
+    margin: auto;
+    background-color: rgba(50, 195, 205, 0.397);
+    padding: 10px 50px 10px 10px;
+}
