@@ -74,7 +74,7 @@ Title = 'Mission', Header = 'Mission', PageText = "Our mission is that every pet
 INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
 VALUES (6, 'Locations', 'Locations', "9941 North Newbridge Ave. Chicago Heights, IL 60411", 3, 3, 1)
 ON DUPLICATE KEY UPDATE
-Title = ' History', Header = 'History', PageText = "9941 North Newbridge Ave. Chicago Heights, IL 60411", ParentPage = 2, PageOrder = 3, IsActive = 1;
+Title = ' Locations', Header = 'Locations', PageText = "9941 North Newbridge Ave. Chicago Heights, IL 60411", ParentPage = 2, PageOrder = 3, IsActive = 1;
 
 INSERT INTO WebDocs (id, Title, Header, PageText, ParentPage, PageOrder, IsActive)
 VALUES (7, 'Email', 'Email', "marielahdz@gmail.com weslay34@gmail.com matthew99@gmail.com", 3, 4, 1)
