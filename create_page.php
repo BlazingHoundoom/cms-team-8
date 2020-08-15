@@ -4,8 +4,8 @@ if(isset($_SESSION["logged-in"])){
     // print_r($_SESSION["logged-in"]);
     if($_SESSION["logged-in"]=="admin"){
         echo '<form class="create" action="add_page.php" method="post">
-        <input type="text" name="title">
-        <input type="text" name="header">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="header" placeholder="Header">
         <select name="parent">
         <option value=0 selected>No Parent</option>';
         $result = GetPages($ConnDB, 0);
@@ -15,7 +15,7 @@ if(isset($_SESSION["logged-in"])){
             }
         }
         echo '</select>
-        <textarea name="content" id="" cols="30" rows="10"></textarea>
+        <textarea name="content" id="" cols="30" rows="10" placeholder="Description"></textarea>
         <button type="submit">Create Page</button>
         </form>';
     }
