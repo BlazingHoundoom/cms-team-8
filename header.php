@@ -1,10 +1,9 @@
 <?php
 session_start();
 // print_r($_SESSION['logged-in']);
-
 include_once "dbConnector.php";
 include_once "menu.php";
-
+$style = isset($_SESSION["styles"]) ? $_SESSION["styles"] : "Style.css";
 ?>
 
 
@@ -14,7 +13,7 @@ include_once "menu.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Store</title>
-    <link rel="stylesheet" type="text/css"  href="Style3.css">
+    <link rel="stylesheet" type="text/css"  href="<?php echo $style; ?>">
 </head>
 <body>
 
