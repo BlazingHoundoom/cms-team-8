@@ -10,6 +10,7 @@ body {
 a {
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
 }
 
 .navBar {
@@ -45,6 +46,13 @@ a {
 
 .form {
     text-align: center;
+}
+
+.edit,.create {
+    
+}
+.edit>input,textarea, .create>input,textarea {
+
 }
 
 #h3 {

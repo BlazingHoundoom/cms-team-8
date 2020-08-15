@@ -18,7 +18,7 @@ function DisplayMenu($data) {
 }
 
 function DisplayPages($data_from_pages) {
-    
+    $ConnDB = ConnGet();
     if($data_from_pages) {
         $row = mysqli_fetch_array($data_from_pages);
 
@@ -31,11 +31,26 @@ function DisplayPages($data_from_pages) {
         if($_SESSION["logged-in"]=="admin"){
             $id = (isset($_GET["PageID"]))? $_GET["PageID"]: 1;
             //echo $id;
-            echo '<form action="update_page.php" method="POST">
+            echo '<form class="edit" action="update_page.php" method="POST">
             <input type="hidden" name="id" value="'.$id.'"/>
-            <input type="text" name="header" value="'. $row['Header'].'"/>
             <input type="text" name="title" value="'. $row['Title'].'"/>
-            <textarea name="content">'.$row["PageText"].'</textarea>
+            <input type="text" name="header" value="'. $row['Header'].'"/>
+            <select name="parent">
+            <option value=0 >No Parent</option>';
+        $result = GetPages($ConnDB, 0);
+        $parent = $row["ParentPage"];
+        if($result) {
+            while($row2 = mysqli_fetch_array($result)) {
+              if($row2["Title"] != $parent){
+                echo '<option value='.$row2["id"].'>'.$row2["Title"].'</option>';
+              }
+              else {
+                echo '<option value='.$row2["id"].' selected>'.$row2["Title"].'</option>';
+              }
+              }
+        }
+      echo '</select>
+            <textarea name="content" cols="30" rows="10">'.$row["PageText"].'</textarea>
             <input type="submit" value="Edit Page" />
             </form>';
             echo '<form action="delete_page.php" method="POST">
