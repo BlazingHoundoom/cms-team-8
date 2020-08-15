@@ -1,0 +1,77 @@
+html {
+    background-image: url("./images/pawprints.png");
+}
+
+body {
+    background-color: rgba(123, 143, 255, 0.788);
+    padding-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(65, 206, 231);
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+}
+  
+.navBar :hover {
+    background-color: rgba(123, 143, 255, 0.788);
+}
+
+.content {
+    text-align: left;
+    font-size: 25px;
+    margin:10px 600px;
+}
+
+#login {
+    text-align: center;
+    font-size: 25px;
+    font-family: cursive;
+    color: rgb(255, 213, 96);
+}
+
+.form {
+    text-align: center;
+}
+
+#h3 {
+    text-align: center;
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+#lbl {
+   font-size: 30px;
+   font-family: fantasy;
+   color: rgb(250, 232, 68);
+}
+
+#inp {
+    width: 30%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    box-sizing: border-box; 
+    font-weight: lighter;
+}
+
+#btn {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(128, 0, 0);
+    color: rgb(223, 250, 68);
+    font-size: 20px;
+    border: 1px solid rgb(128, 0, 0);
+}

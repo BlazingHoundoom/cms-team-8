@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(203, 221, 221);
+}
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(151, 218, 203);
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+}
+  
+.navBar :hover {
+    background-color: rgb(17, 73, 39);
+}
+
+.content {
+    text-align: left;
+    font-size: 25px;
+    margin:10px 600px;
+}
+
+#login {
+    text-align: center;
+    font-size: 25px;
+    font-family: cursive;
+    color: teal;
+}
+
+.form {
+    text-align: center;
+}
+
+#h3 {
+    text-align: center;
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+#lbl {
+   font-size: 30px;
+   font-family: fantasy;
+   color: teal;
+}
+
+#inp {
+    width: 30%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    box-sizing: border-box; 
+}
+
+#btn {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(78, 211, 166);
+    font-size: 20px;
+    border: 1px solid rgb(78, 211, 166);
+}

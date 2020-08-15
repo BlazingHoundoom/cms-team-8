@@ -8,13 +8,13 @@ include_once "header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css"  href="Style.css">
+    <link rel="stylesheet" type="text/css"  href="Style3.css">
 </head>
 <body> -->
     <div class="content">
     <h1 id="login">Login Page</h1>
 
+    <br/><br/>
     <?php
         //session_start();
 
@@ -76,44 +76,45 @@ include_once "header.php";
         }
 
         if ($input_username === "" && $input_password === "") {
-            //echo "<h3>Nothing</h3>";
+            //echo "<h3 id='h3'>Nothing</h3>";
         } else if (strcmp($val1, $input_username) === 0 && strcmp($val2, $input_password) === 0) {
-            echo '<h3>Admin wesmon is logged in</h3>';
+            echo '<h3 id="h3">Admin wesmon is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
             header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
             exit();
         } else if (strcmp($val3, $input_username) === 0 && strcmp($val4, $input_password) === 0) {
-            echo '<h3>Admin matguer is logged in</h3>';
+            echo '<h3 id="h3">Admin matguer is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
             header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
             exit();
         } else if (strcmp($val5, $input_username) === 0 && strcmp($val6, $input_password) === 0) {
-            echo '<h3>Admin CisHer is logged in</h3>';
+            echo '<h3 id="h3">Admin CisHer is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
             header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
             exit();
         } else if (strcmp($val7, $input_username) === 0 && strcmp($val8, $input_password) === 0) {
-            echo '<h3>User manny is logged in</h3>';
+            echo '<h3 id="h3">User manny is logged in</h3>';
             $_SESSION["logged-in"] = "user";
             header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
             exit();
         } else {
             echo "<h3>Username and Password are Invalid</h3>";
         }
-        //cprint_r($_SESSION['logged-in']);
+        // print_r($_SESSION['logged-in']);
 
         echo "
         <div class='form'>
             <form action=\"\" method=\"POST\">
                 <div>
-                    <label for=\"uname\"><b>Username</b></label>
-                    <input type=\"text\" placeholder=\"Enter Username\" name=\"uname\" required>
+                    <label id='lbl' for=\"uname\"><b>Username</b></label><br/>
+                    <input id='inp' type=\"text\" placeholder=\"Enter Username\" name=\"uname\" required>
                     <br/>
                     <br/>
-                    <label for=\"psw\"><b>Password</b></label>
-                    <input type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>
+                    <label id='lbl' for=\"psw\"><b>Password</b></label><br/>
+                    <input id='inp' type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>
                     <br/>
-                    <button type=\"submit\">Login</button>
+                    <br/>
+                    <button id='btn' type=\"submit\">Login</button>
                 </div>
             </form>
         </div>";
