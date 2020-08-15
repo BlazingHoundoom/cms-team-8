@@ -3,15 +3,16 @@
 include_once "header.php";
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css"  href="Style.css">
 </head>
-<body>
+<body> -->
+    <div class="content">
     <h1 id="login">Login Page</h1>
 
     <?php
@@ -75,23 +76,31 @@ include_once "header.php";
         }
 
         if ($input_username === "" && $input_password === "") {
-            echo "<h3>Nothing</h3>";
+            //echo "<h3>Nothing</h3>";
         } else if (strcmp($val1, $input_username) === 0 && strcmp($val2, $input_password) === 0) {
             echo '<h3>Admin wesmon is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
+            header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
+            exit();
         } else if (strcmp($val3, $input_username) === 0 && strcmp($val4, $input_password) === 0) {
             echo '<h3>Admin matguer is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
+            header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
+            exit();
         } else if (strcmp($val5, $input_username) === 0 && strcmp($val6, $input_password) === 0) {
             echo '<h3>Admin CisHer is logged in</h3>';
             $_SESSION["logged-in"] = "admin";
+            header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
+            exit();
         } else if (strcmp($val7, $input_username) === 0 && strcmp($val8, $input_password) === 0) {
             echo '<h3>User manny is logged in</h3>';
             $_SESSION["logged-in"] = "user";
+            header("Location: index.php"); /* Redirect browser, MUST occur before anything is output to page */
+            exit();
         } else {
             echo "<h3>Username and Password are Invalid</h3>";
         }
-        print_r($_SESSION['logged-in']);
+        //cprint_r($_SESSION['logged-in']);
 
         echo "
         <div class='form'>
@@ -109,6 +118,7 @@ include_once "header.php";
             </form>
         </div>";
     ?>
+    </div>
 </body>
 </html>
 

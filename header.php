@@ -1,6 +1,6 @@
 <?php
 session_start();
-print_r($_SESSION['logged-in']);
+//print_r($_SESSION['logged-in']);
 
 include_once "dbConnector.php";
 include_once "menu.php";
@@ -13,8 +13,8 @@ include_once "menu.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css"  href="Style.css">
+    <title>Be Content With Your Content</title>
+    <link rel="stylesheet" type="text/css"  href="styles_02.css">
 </head>
 <body>
 
@@ -28,9 +28,15 @@ include_once "menu.php";
 
             DisplayMenu($result);
             mysqli_free_result($result);
-
         ?>
-        &nbsp; &nbsp;<a href="login.php">Login Page</a>
+        <a href="login.php">Login Page</a>
+        <?php
+            if(isset($_SESSION["logged-in"])){
+                if($_SESSION["logged-in"]=="admin"){
+                    echo '<a href="create_page.php">New Page</a>';
+                }
+            }
+        ?>
     </div>
 </body>
 </html>

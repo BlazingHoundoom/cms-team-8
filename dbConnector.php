@@ -6,7 +6,7 @@ DEFINE ('DB_SERVER', 'localhost');
 DEFINE ('DB_NAME', 'Content');
 
 function ConnGet() {
-    $ConnDB = @mysqli_connect(DB_SERVER, DB_USER, DB_PSWD, DB_NAME, 3308)
+    $ConnDB = @mysqli_connect(DB_SERVER, DB_USER, DB_PSWD, DB_NAME, 3306)
 
     OR die('Failed to connect to MySQL ' . DB_SERVER . '::' . DB_NAME . ' : ' . mysqli_connect_error());
 

@@ -1,17 +1,18 @@
 
 <?php
 include_once "header.php";
+
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css"  href="Style.css">
+    <title><?php  echo $title ?></title>
+    <link rel="stylesheet" type="text/css"  href="styles_02.css">
 </head>
-<body>
+<body> -->
 
     <div class="content">
         <?php
@@ -24,17 +25,19 @@ include_once "header.php";
         ?>
 
         <?php 
+            $sub_pages = GetPages($ConnDB, $PageID);
+            if(($PageID != "0") && ($sub_pages) && ($sub_pages->num_rows > 0)) {  
+                echo "<div class='subNavBar'>";
+                DisplayMenu($sub_pages);
+                mysqli_free_result($sub_pages);
+                echo "</div>";
+            } 
 
             $pages_data = GetContentPage($ConnDB, $PageID);
             DisplayPages($pages_data);
             mysqli_free_result($pages_data);
 
 
-            $sub_pages = GetPages($ConnDB, $PageID);
-            if(($PageID != "0") && ($sub_pages) && ($sub_pages->num_rows > 0)) {
-                DisplayMenu($sub_pages);
-                mysqli_free_result($sub_pages);
-            } 
 
             mysqli_close($ConnDB);
         ?>
@@ -44,5 +47,4 @@ include_once "header.php";
 </html>
 
 <?php 
-require 'create_page.php';
 ?>
