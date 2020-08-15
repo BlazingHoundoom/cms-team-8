@@ -29,11 +29,11 @@ include_once "menu.php";
             DisplayMenu($result);
             mysqli_free_result($result);
         ?>
-        <a href="login.php">Login Page</a>
+         &nbsp; &nbsp; <a href="login.php">Login Page</a>
         <?php
             if(isset($_SESSION["logged-in"])){
                 if($_SESSION["logged-in"]=="admin"){
-                    echo '<a href="create_page.php">New Page</a>';
+                    echo ' &nbsp; &nbsp; <a href="create_page.php">New Page</a>';
                 }
             }
         ?>
