@@ -34,6 +34,7 @@ include_once "menu.php";
             if(isset($_SESSION["logged-in"])){
                 if($_SESSION["logged-in"]=="admin"){
                     echo ' &nbsp; &nbsp; <a href="create_page.php">New Page</a>';
+                    echo ' &nbsp; &nbsp; <a href="change_styles.php">Change Styles</a>';
                 }
             }
         ?>

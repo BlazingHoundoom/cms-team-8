@@ -3,10 +3,11 @@ include_once "header.php";
 if(isset($_SESSION["logged-in"])){
     // print_r($_SESSION["logged-in"]);
     if($_SESSION["logged-in"]=="admin"){
-        echo '<form action="add_page.php" method="post">
+        echo '<form class="create" action="add_page.php" method="post">
         <input type="text" name="title">
         <input type="text" name="header">
-        <select name="parent">';
+        <select name="parent">
+        <option value=0 selected>No Parent</option>';
         $result = GetPages($ConnDB, 0);
         if($result) {
             while($row = mysqli_fetch_array($result)) {

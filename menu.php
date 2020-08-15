@@ -31,11 +31,12 @@ function DisplayPages($data_from_pages) {
         if($_SESSION["logged-in"]=="admin"){
             $id = (isset($_GET["PageID"]))? $_GET["PageID"]: 1;
             //echo $id;
-            echo '<form action="update_page.php" method="POST">
+            echo '<form class="edit" action="update_page.php" method="POST">
             <input type="hidden" name="id" value="'.$id.'"/>
             <input type="text" name="title" value="'. $row['Title'].'"/>
             <input type="text" name="header" value="'. $row['Header'].'"/>
-            <select name="parent">';
+            <select name="parent">
+            <option value=0 >No Parent</option>';
         $result = GetPages($ConnDB, 0);
         $parent = $row["ParentPage"];
         if($result) {
