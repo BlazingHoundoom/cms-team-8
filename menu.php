@@ -23,7 +23,7 @@ function DisplayPages($data_from_pages) {
         $row = mysqli_fetch_array($data_from_pages);
 
         echo ' &nbsp; &nbsp; <h2> ' . $row['Header'] .  ' </h2> <br />';
-        echo ' &nbsp; &nbsp; <p> ' . $row['PageText'] .  ' </p> <br />';
+        echo ' &nbsp; &nbsp; <p> ' . $row['PageText'] .  ' </p>';
     } else {
         echo "The page don't have data to display <br />";
     }
@@ -32,9 +32,12 @@ function DisplayPages($data_from_pages) {
             $id = (isset($_GET["PageID"]))? $_GET["PageID"]: 1;
             //echo $id;
             echo '<form class="edit" action="update_page.php" method="POST">
-            <input type="hidden" name="id" value="'.$id.'"/>
-            <input type="text" name="title" value="'. $row['Title'].'"/>
-            <input type="text" name="header" value="'. $row['Header'].'"/>
+            <input id="inp" type="hidden" name="id" value="'.$id.'"/>
+            <br/>
+            <input id="inp" placeholder="Title" type="text" name="title" value="'. $row['Title'].'"/>
+            <br/>
+            <input id="inp" placeholder="Header" type="text" name="header" value="'. $row['Header'].'"/>
+            <br/>
             <select name="parent">
             <option value=0 >No Parent</option>';
         $result = GetPages($ConnDB, 0);
@@ -50,12 +53,15 @@ function DisplayPages($data_from_pages) {
               }
         }
       echo '</select>
-            <textarea name="content" cols="30" rows="10">'.$row["PageText"].'</textarea>
-            <input type="submit" value="Edit Page" />
+             <br/>
+             <br/>
+            <textarea placeholder="Description" name="content" cols="30" rows="10">'.$row["PageText"].'</textarea>
+            <br/>
+            <input id="inp" type="submit" value="Edit Page" />
             </form>';
             echo '<form action="delete_page.php" method="POST">
-            <input type="hidden" name="id" value="'.$id.'"/>
-            <input type="submit" value="Delete Page" />
+            <input id="inp" type="hidden" name="id" value="'.$id.'"/>
+            <input id="inp" type="submit" value="Delete Page" />
             </form>';
         }
     }
