@@ -19,7 +19,9 @@ if(isset($_SESSION["logged-in"])){
             }
         }
         echo '</select>
+        <br/>
         <textarea id="inp" name="content" id="" cols="30" rows="10" placeholder="Description"></textarea>
+        </br>
         <button id="btn" type="submit">Create Page</button>
         </form>';
     }
